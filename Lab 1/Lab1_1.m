@@ -23,6 +23,10 @@ ceros_lazo_cerrado_h1 = zero(lazo_cerrado_h1);
 polos_lazo_abierto_h1 = pole(lazo_abierto_h1);
 polos_lazo_cerrado_h1 = pole(lazo_cerrado_h1);
 
+% Tabla H1
+tabla_lazo_abierto_h1 = damp(lazo_abierto_h1);
+tabla_lazo_cerrado_h1 = damp(lazo_cerrado_h1);
+
 % Grafico Lazo Abierto H1
 figure(1);
 step(lazo_abierto_h1);
@@ -58,6 +62,10 @@ ceros_lazo_cerrado_h2 = zero(lazo_cerrado_h2);
 polos_lazo_abierto_h2 = pole(lazo_abierto_h2);
 polos_lazo_cerrado_h2 = pole(lazo_cerrado_h2);
 
+% Tabla H2
+tabla_lazo_abierto_h2 = damp(lazo_abierto_h2);
+tabla_lazo_cerrado_h2 = damp(lazo_cerrado_h2);
+
 % Grafico Lazo Abierto H2
 figure(3);
 step(lazo_abierto_h2);
@@ -73,4 +81,3 @@ title("Grafico Lazo Cerrado H2");
 grid("on");
 xlabel("s");
 ylabel("H2(s)");
-
