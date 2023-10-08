@@ -12,7 +12,7 @@ H5 = (8*s + 8)/(s^3 + 2*s^2 + 3*s);
 H6 = (3*s + 2)/(5*s^2 + 7*s + 10);
 
 H1_H2_Paralelo = H1 + H2;
-Lazo_Cerrado_H3 = feedback(H3, 1, -1); % Se desconoce el signo, se asume negativo
+Lazo_Cerrado_H3 = feedback(H3, 1, +1);
 
 % Conección en serie lazo cerrado H3 con H4
 Lazo_Cerrado_H3H4 = Lazo_Cerrado_H3 * H4;
@@ -37,7 +37,7 @@ step(salida);
 title("Grafico Sistema Parte 2");
 grid("on");
 xlabel("s");
-ylabel("H");
+ylabel("H(s)");
 
 % Ceros
 ceros_sistema_salida = zero(salida);

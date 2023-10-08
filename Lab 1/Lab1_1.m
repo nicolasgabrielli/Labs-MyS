@@ -4,15 +4,16 @@
 s = tf("s");
 
 % Función de transferencia H1
+% Desarrollo en el cuaderno
 H1 = (4*s)/(3*s + 1);
 
 % Lazo abierto para H1 es:
 lazo_abierto_h1 = H1;   % u(s) -> H1 -> y(s)
 
 % Para obtener el lazo cerrado, se requiere una retroalimentación con 
-% H = 1/(1 + H1)
+% H = H1/(1 + H1)
 % Lazo cerrado para H1 es:
-lazo_cerrado_h1 = feedback(H1, 1, -1);
+lazo_cerrado_h1 = feedback(H1, 1);
 
 % Ceros H1
 ceros_lazo_abierto_h1 = zero(lazo_abierto_h1);
@@ -28,7 +29,7 @@ step(lazo_abierto_h1);
 title("Grafico Lazo Abierto H1");
 grid("on");
 xlabel("s");
-ylabel("H1");
+ylabel("H1(s)");
 
 % Grafico Lazo Cerrado H1
 figure(2);
@@ -36,7 +37,7 @@ step(lazo_cerrado_h1);
 title("Grafico Lazo Cerrado H1");
 grid("on");
 xlabel("s");
-ylabel("H1");
+ylabel("H1(s)");
 
 % Función de transferencia H2
 H2 = (5*s^2 + 7*s + 1)/(s^2 + 6*s + 3);
@@ -45,9 +46,9 @@ H2 = (5*s^2 + 7*s + 1)/(s^2 + 6*s + 3);
 lazo_abierto_h2 = H2;
 
 % Para obtener el lazo cerrado, se requiere una retroalimentación con
-% H = 1/(1 + H2)
+% H = H2/(1 + H2)
 % Lazo cerrado para H2 es:
-lazo_cerrado_h2 = feedback(H2, 1, -1);
+lazo_cerrado_h2 = feedback(H2, 1);
 
 % Ceros H2
 ceros_lazo_abierto_h2 = zero(lazo_abierto_h2);
@@ -63,7 +64,7 @@ step(lazo_abierto_h2);
 title("Grafico Lazo Abierto H2");
 grid("on");
 xlabel("s");
-ylabel("H2");
+ylabel("H2(s)");
 
 % Grafico Lazo Cerrado H2
 figure(4);
@@ -71,5 +72,5 @@ step(lazo_cerrado_h2);
 title("Grafico Lazo Cerrado H2");
 grid("on");
 xlabel("s");
-ylabel("H2");
+ylabel("H2(s)");
 
